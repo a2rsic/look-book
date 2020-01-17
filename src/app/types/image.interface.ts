@@ -2,7 +2,7 @@ export interface IImage {
     id: number;
     author: string;
     width: number;
-    heigth: number;
+    height: number;
     url: string;
     download_url: string;
 }

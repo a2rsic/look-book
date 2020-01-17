@@ -52,6 +52,15 @@ mat-card-content {
     }
 }
 
+.sort-btn {
+    margin: 20px;
+
+    button {
+        background-color: #f06292;
+        color: white;
+    }
+}
+
 .view {
     display: flex;
     flex-direction: column;

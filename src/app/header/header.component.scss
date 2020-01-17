@@ -3,6 +3,12 @@ $textColor: white;
 
 .navbar {
     background-color: $bgColor;
+    display: flex;
+    justify-content: center;
+
+    input {
+        width: 40%;
+    }
 }
 
 .title {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { InteractionService } from '../interaction.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('inputValue', { static: false }) inputValue: ElementRef;
+
+  constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
+  }
+
+  public emitSearchValue() {
+    const value = this.inputValue.nativeElement.value;
+    this.interactionService.emitValue(value);
   }
 
 }

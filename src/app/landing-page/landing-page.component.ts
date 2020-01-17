@@ -10,6 +10,7 @@ import { IImage } from '../types/image.interface';
 export class LandingPageComponent implements OnInit {
 
   public images: IImage[] = [];
+  public filteredImages: IImage[] = [];
 
   constructor(private photosService: PhotosService) { }
 
@@ -22,6 +23,7 @@ export class LandingPageComponent implements OnInit {
       (response) => {
         console.log('response :', response);
         this.images = response;
+        this.filteredImages = response;
       },
       (error) => {
         alert('Something went wrong');
