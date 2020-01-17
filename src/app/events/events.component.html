@@ -1,11 +1,7 @@
 <div class="events-container">
-    <div class="title">
-        <h4>
-            Upcoming Events</h4>
-        <div class="hint"></div>
-    </div>
-    <div class="events" *ngFor="let image of images.slice(24, 30)">
-        <mat-list>
+    <app-events-title (emitViewChangeValue)="onViewChange($event)"></app-events-title>
+    <div class="events" [ngClass]="{'change-view': list}">
+        <mat-list *ngFor="let image of images.slice(24, 30)">
             <mat-list-item>
                 <div class="image-info">
                     <div class="image">

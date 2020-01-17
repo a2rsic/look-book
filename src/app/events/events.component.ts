@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IImage } from '../types/image.interface';
 
 @Component({
   selector: 'app-events',
@@ -7,11 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  @Input() images;
+  public list: boolean;
+
+  @Input() images: IImage[] = [];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public onViewChange(data: boolean) {
+    this.list = data;
   }
 
 }

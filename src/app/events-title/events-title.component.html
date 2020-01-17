@@ -1,0 +1,10 @@
+<div class="title">
+    <h4>
+        Upcoming Events
+        <div class="hint"></div>
+    </h4>
+    <div class="view" (click)="emitViewChange()">
+        <i matTooltip="{{isList ? 'List view' : 'Grid view'}}"
+            class="material-icons">{{isList ? 'view_list' : 'view_module'}}</i>
+    </div>
+</div>

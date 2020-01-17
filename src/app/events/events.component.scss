@@ -2,15 +2,6 @@
     margin-bottom: 55px;
 }
 
-.title {
-    margin-bottom: 20px;
-
-    .hint {
-        width: 33px;
-        border-bottom: 4px solid #ff80ab;
-    }
-}
-
 .image {
     display: flex;
 
@@ -40,6 +31,7 @@
 
 .action-btn {
     margin-bottom: 10px;
+    margin-left: 40px;
 
     a {
         text-decoration: none;
@@ -49,6 +41,11 @@
         background-color: #ff4081;
         color: white;
     }
+}
+
+.change-view {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 530px) {

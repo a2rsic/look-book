@@ -12,6 +12,7 @@ import { CommonModule } from './common/common.module';
 import { TicketsComponent } from './tickets/tickets.component';
 import { EventsComponent } from './events/events.component';
 import { TicketsTitleComponent } from './tickets-title/tickets-title.component';
+import { EventsTitleComponent } from './events-title/events-title.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TicketsTitleComponent } from './tickets-title/tickets-title.component';
     LandingPageComponent,
     TicketsComponent,
     EventsComponent,
-    TicketsTitleComponent
+    TicketsTitleComponent,
+    EventsTitleComponent
   ],
   imports: [
     BrowserModule,
