@@ -9,6 +9,7 @@ import { IImage } from '../types/image.interface';
 })
 export class LandingPageComponent implements OnInit {
 
+  public isLoading: boolean;
   public images: IImage[] = [];
   public filteredImages: IImage[] = [];
 
@@ -21,11 +22,12 @@ export class LandingPageComponent implements OnInit {
   private loadImages() {
     this.photosService.getImages().subscribe(
       (response) => {
-        console.log('response :', response);
+        this.isLoading = false;
         this.images = response;
         this.filteredImages = response;
       },
       (error) => {
+        this.isLoading = false;
         alert('Something went wrong');
         console.log(error);
       }

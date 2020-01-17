@@ -1,4 +1,5 @@
 <div class="container">
+    <mat-spinner class="loading" [diameter]="20" *ngIf="isLoading"></mat-spinner>
     <app-tickets [filteredImages]="filteredImages" [images]="images"></app-tickets>
     <app-events [images]="images"></app-events>
 </div>
