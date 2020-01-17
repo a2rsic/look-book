@@ -1,0 +1,41 @@
+.events-container {
+    margin-bottom: 55px;
+}
+
+.title {
+    span {
+        width: 20px;
+        border-bottom: 4px solid #ff80ab;
+    }
+}
+
+mat-list-item {
+    height: 80px!important;
+}
+
+.image {
+    display: flex;
+
+    img {
+        width: 120px;
+        height: 60px;
+    }
+
+    .date {
+        margin: 0 10px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+
+        .time {
+            color: #ff80ab;
+        }
+
+        .name {
+            font-weight: 500;
+        }
+    }
+}
