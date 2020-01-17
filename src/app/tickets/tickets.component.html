@@ -1,0 +1,27 @@
+<div class="tickets-container">
+    <div class="title">
+        <h4>
+            <span>Hot</span>
+            Tickets</h4>
+    </div>
+    <div class="tickets">
+        <div class="ticket" *ngFor="let image of images.slice(1, 7)">
+            <mat-card>
+                <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
+                <a href="#">
+                    <span class="author">{{image.author}}</span>
+                </a>
+                <mat-card-content>
+                    <p>
+                        <span>Height:</span>
+                        {{image.height}}
+                    </p>
+                    <p>
+                        <span>Width:</span>
+                        {{image.width}}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

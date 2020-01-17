@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotosService } from '../photos.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  public images = [];
+
+  constructor(private photosService: PhotosService) { }
 
   ngOnInit() {
+    this.loadImages();
+  }
+
+  private loadImages() {
+    this.photosService.getImages().subscribe(
+      (response) => {
+        console.log('response :', response);
+        this.images = response;
+      }
+    )
   }
 
 }

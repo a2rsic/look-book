@@ -1,0 +1,63 @@
+.tickets-container {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    span {
+        width: 20px;
+        border-bottom: 4px solid #ff80ab;
+    }
+}
+
+.tickets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+
+    .ticket {
+        margin: 10px;
+    }
+}
+
+mat-card {
+    position: relative;
+
+    .author {
+        position: absolute;
+        bottom: 94px;
+        right: 50px;
+        color: white;
+        font-weight: 500;
+    }
+
+    img {
+        max-width: 96%;
+        height: 120px;
+        margin: 16px auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .ticket {
+        width: 94%;
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 526px) {
+    .ticket {
+        width: 46%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ticket {
+        width: 30%;
+    }
+}

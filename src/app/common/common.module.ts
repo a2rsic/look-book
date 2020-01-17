@@ -6,6 +6,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
     declarations: [],
@@ -16,7 +18,8 @@ import { MatListModule } from '@angular/material/list';
         MatExpansionModule,
         MatFormFieldModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        MatCardModule
     ],
     exports: [
         MatProgressSpinnerModule,
@@ -25,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
         MatExpansionModule,
         MatFormFieldModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        MatCardModule
     ]
 })
 export class CommonModule { }
