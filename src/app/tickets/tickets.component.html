@@ -27,5 +27,14 @@
     </div>
 </div>
 <div class="sort-btn">
-    <button (click)="sortImages()" type="button" class="btn btn-sm">Sort images</button>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle matTooltip="Sort images from largest" (click)="sortImagesFromLargest()" value="bold">Sort
+            images
+            <i class="material-icons">keyboard_arrow_down</i>
+        </mat-button-toggle>
+        <mat-button-toggle (click)="sortImagesFromSmallest()" matTooltip="Sort images from smallest" value="italic">Sort
+            images
+            <i class="material-icons">keyboard_arrow_up</i>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
 </div>

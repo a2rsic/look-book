@@ -30,8 +30,19 @@ export class TicketsComponent implements OnInit {
     this.grid = data;
   }
 
-  public sortImages() {
+  public sortImagesFromLargest() {
     this.filteredImages = this.filteredImages.sort(this.compareImages);
+  }
+
+  public sortImagesFromSmallest() {
+    this.filteredImages = this.filteredImages.sort(this.sortImages);
+  }
+
+  private sortImages(a, b) {
+    const sumA = a.width + a.height;
+    const sumB = b.width + b.height;
+
+    return sumA > sumB ? 1 : sumB > sumA ? -1 : 0;
   }
 
   private compareImages(a, b) {
@@ -39,12 +50,7 @@ export class TicketsComponent implements OnInit {
     const sumA = a.width + a.height;
     const sumB = b.width + b.height;
 
-    if (sumA < sumB) {
-      return 1;
-    } else if (sumB < sumA) {
-      return - 1;
-    }
-    return 0;
+    return sumB > sumA ? 1 : sumA > sumB ? -1 : 0;
   }
 
   private filterImages(inputValue) {

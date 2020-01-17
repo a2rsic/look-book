@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatDividerModule,
         MatListModule,
         MatCardModule,
-        MatButtonModule
+        MatButtonModule,
+        MatButtonToggleModule
     ],
     exports: [
         MatProgressSpinnerModule,
@@ -31,7 +33,9 @@ import { MatButtonModule } from '@angular/material/button';
         MatFormFieldModule,
         MatDividerModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule,
+        MatButtonToggleModule
     ]
 })
 export class CommonModule { }
