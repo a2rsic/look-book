@@ -31,14 +31,25 @@ export class TicketsComponent implements OnInit {
   }
 
   public sortImages() {
-    const sum = this.images.map(image => image.width + image.height).sort((a, b) => b - a);
-    console.log('sum :', sum);
+    this.filteredImages = this.filteredImages.sort(this.compareImages);
+  }
+
+  private compareImages(a, b) {
+
+    const sumA = a.width + a.height;
+    const sumB = b.width + b.height;
+
+    if (sumA < sumB) {
+      return 1;
+    } else if (sumB < sumA) {
+      return - 1;
+    }
+    return 0;
   }
 
   private filterImages(inputValue) {
     inputValue.trim().toLowerCase();
     this.filteredImages = this.images.filter(image => image.author.trim().toLowerCase().includes(inputValue));
-    console.log(this.filteredImages);
   }
 
 }
