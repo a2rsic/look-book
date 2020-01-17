@@ -1,0 +1,9 @@
+<div class="title">
+    <h4>
+        <span>Hot</span>
+        Tickets</h4>
+    <div class="view" (click)="emitViewChange()">
+        <i matTooltip="{{isGrid ? 'Grid view' : 'List view'}}"
+            class="material-icons">{{isGrid ? 'view_module' : 'view_list'}}</i>
+    </div>
+</div>

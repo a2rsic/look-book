@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from './common/common.module';
 import { TicketsComponent } from './tickets/tickets.component';
 import { EventsComponent } from './events/events.component';
+import { TicketsTitleComponent } from './tickets-title/tickets-title.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventsComponent } from './events/events.component';
     FooterComponent,
     LandingPageComponent,
     TicketsComponent,
-    EventsComponent
+    EventsComponent,
+    TicketsTitleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    span {
+        width: 20px;
+        border-bottom: 4px solid #ff80ab;
+    }
+
+    i {
+        cursor: pointer;
+    }
+}

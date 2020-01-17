@@ -1,14 +1,10 @@
 <div class="tickets-container">
-    <div class="title">
-        <h4>
-            <span>Hot</span>
-            Tickets</h4>
-    </div>
-    <div class="tickets">
+    <app-tickets-title (emitedView)="loadEmitedViewChange($event)"></app-tickets-title>
+    <div class="tickets" [ngClass]="{'view': grid}">
         <div class="ticket" *ngFor="let image of images.slice(1, 7)">
             <mat-card>
-                <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
                 <a [href]="image.url">
+                    <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
                     <span class="author">{{image.author}}</span>
                 </a>
                 <mat-card-content>

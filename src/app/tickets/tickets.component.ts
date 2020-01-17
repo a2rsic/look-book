@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IImage } from '../types/image.interface';
 
 @Component({
   selector: 'app-tickets',
@@ -7,11 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TicketsComponent implements OnInit {
 
-  @Input() images;
+  public grid: boolean;
+
+  @Input() images: IImage;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public loadEmitedViewChange(data: boolean) {
+    this.grid = data;
   }
 
 }
