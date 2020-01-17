@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from '../photos.service';
+import { IImage } from '../types/image.interface';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,7 +9,7 @@ import { PhotosService } from '../photos.service';
 })
 export class LandingPageComponent implements OnInit {
 
-  public images = [];
+  public images: IImage[] = [];
 
   constructor(private photosService: PhotosService) { }
 
@@ -21,8 +22,12 @@ export class LandingPageComponent implements OnInit {
       (response) => {
         console.log('response :', response);
         this.images = response;
+      },
+      (error) => {
+        alert('Something went wrong');
+        console.log(error);
       }
-    )
+    );
   }
 
 }
