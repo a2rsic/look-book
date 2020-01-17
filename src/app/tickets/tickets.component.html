@@ -8,7 +8,7 @@
         <div class="ticket" *ngFor="let image of images.slice(1, 7)">
             <mat-card>
                 <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
-                <a href="#">
+                <a [href]="image.url">
                     <span class="author">{{image.author}}</span>
                 </a>
                 <mat-card-content>

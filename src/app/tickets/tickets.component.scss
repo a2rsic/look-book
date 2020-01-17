@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
 
     .ticket {
         margin: 10px;
@@ -55,15 +56,13 @@ mat-card-content {
         position: relative;
         top: 6px;
         margin-right: 4px;
-        // color: gray;
     }
 }
 
 @media screen and (max-width: 500px) {
 
     .ticket {
-        width: 94%;
-        text-align: center;
+        width: 100%;
     }
 }
 
@@ -71,6 +70,7 @@ mat-card-content {
 @media screen and (min-width: 526px) {
     .ticket {
         width: 46%;
+        justify-content: center;
     }
 }
 

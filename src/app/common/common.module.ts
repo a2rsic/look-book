@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MatCardModule } from '@angular/material/card';
         MatFormFieldModule,
         MatDividerModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule
     ],
     exports: [
         MatProgressSpinnerModule,
