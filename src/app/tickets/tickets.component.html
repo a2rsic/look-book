@@ -1,28 +1,12 @@
 <div class="tickets-container">
     <app-tickets-title (emitedView)="loadEmitedViewChange($event)"></app-tickets-title>
-    <div class="tickets" [ngClass]="{'view': grid}">
+    <div class="tickets">
         <div class="hint" *ngIf="filteredImages.length === 0">
             <p>No results</p>
         </div>
-        <div class="ticket" *ngFor="let image of filteredImages.slice(1, 7)">
-            <mat-card>
-                <a [href]="image.url">
-                    <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
-                    <span class="author">{{image.author}}</span>
-                </a>
-                <mat-card-content>
-                    <p>
-                        <span class="image-info"><i class="material-icons">crop_original</i>Height:</span>
-                        &nbsp;
-                        {{image.height}}
-                    </p>
-                    <p>
-                        <span class="image-info"><i class="material-icons">crop_original</i>Width:</span>
-                        &nbsp;
-                        {{image.width}}
-                    </p>
-                </mat-card-content>
-            </mat-card>
+        <div [ngClass]="{'ticket': view === 'grid'}" *ngFor="let image of filteredImages.slice(1, 7)">
+            <app-tickets-grid-view *ngIf="view === 'grid'" [image]="image"></app-tickets-grid-view>
+            <app-tickets-list-view *ngIf="view === 'list'" [image]="image"></app-tickets-list-view>
         </div>
     </div>
 </div>

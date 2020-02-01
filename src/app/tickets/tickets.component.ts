@@ -10,6 +10,7 @@ import { InteractionService } from '../interaction.service';
 export class TicketsComponent implements OnInit {
 
   public grid: boolean;
+  public view: string;
   private searchValue: string;
 
   @Input() images: IImage[] = [];
@@ -18,6 +19,7 @@ export class TicketsComponent implements OnInit {
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
+    this.view = 'grid';
     this.interactionService.value$.subscribe(
       (data) => {
         this.searchValue = data;
@@ -28,6 +30,12 @@ export class TicketsComponent implements OnInit {
 
   public loadEmitedViewChange(data: boolean) {
     this.grid = data;
+    console.log('this.grid :', this.grid);
+    if (this.grid) {
+      this.view = 'list';
+    } else {
+      this.view = 'grid';
+    }
   }
 
   public sortImagesFromLargest() {
