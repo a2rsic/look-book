@@ -1,0 +1,18 @@
+<mat-card>
+    <a [href]="image.url">
+        <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
+        <span class="author">{{image.author}}</span>
+    </a>
+    <mat-card-content>
+        <p>
+            <span class="image-info"><i class="material-icons">crop_original</i>Height:</span>
+            &nbsp;
+            {{image.height}}
+        </p>
+        <p>
+            <span class="image-info"><i class="material-icons">crop_original</i>Width:</span>
+            &nbsp;
+            {{image.width}}
+        </p>
+    </mat-card-content>
+</mat-card>

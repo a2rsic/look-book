@@ -13,6 +13,8 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { EventsComponent } from './events/events.component';
 import { TicketsTitleComponent } from './tickets-title/tickets-title.component';
 import { EventsTitleComponent } from './events-title/events-title.component';
+import { TicketsGridViewComponent } from './tickets/tickets-grid-view/tickets-grid-view.component';
+import { TicketsListViewComponent } from './tickets/tickets-list-view/tickets-list-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EventsTitleComponent } from './events-title/events-title.component';
     TicketsComponent,
     EventsComponent,
     TicketsTitleComponent,
-    EventsTitleComponent
+    EventsTitleComponent,
+    TicketsGridViewComponent,
+    TicketsListViewComponent
   ],
   imports: [
     BrowserModule,
