@@ -1,33 +1,12 @@
 <div class="events-container">
     <app-events-title (emitViewChangeValue)="onViewChange($event)"></app-events-title>
-    <div class="events" [ngClass]="{'change-view': list}">
-        <mat-list *ngFor="let image of images.slice(24, 27)">
-            <mat-list-item>
-                <div class="image-info">
-                    <div class="image">
-                        <img [src]="image.download_url" [alt]="image.author">
-                        <div class="date">
-                            <p>FEB</p>
-                            <p>14</p>
-                        </div>
-                        <div class="info">
-                            <span class="time">Mon - 19:30</span>
-                            <span class="name">{{image.author}}</span>
-                            <p><span>Width: &nbsp;</span>{{image.width}}<span>, Height: &nbsp;</span>{{image.height}}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="action-btn">
-                        <a [href]="image.url">
-                            <button type="button" class="btn">
-                                Find pics
-                                <i class="material-icons">keyboard_arrow_right</i>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-        </mat-list>
+    <div class="events">
+        <div class="events-grid" *ngIf="view === 'grid'">
+            <app-events-grid-view *ngFor="let image of images.slice(24, 27)" [image]="image"></app-events-grid-view>
+        </div>
+        <div class="events-list" *ngIf="view === 'list'">
+            <app-events-list-view *ngFor="let image of images.slice(24, 27)" [image]="image"></app-events-list-view>
+        </div>
+
     </div>
 </div>

@@ -9,16 +9,23 @@ import { IImage } from '../types/image.interface';
 export class EventsComponent implements OnInit {
 
   public list: boolean;
+  public view: string;
 
   @Input() images: IImage[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.view = 'list';
   }
 
   public onViewChange(data: boolean) {
     this.list = data;
+    if (this.list) {
+      this.view = 'grid';
+    } else {
+      this.view = 'list';
+    }
   }
 
 }
