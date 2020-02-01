@@ -4,9 +4,13 @@
         <div class="hint" *ngIf="filteredImages.length === 0">
             <p>No results</p>
         </div>
-        <div [ngClass]="{'ticket': view === 'grid'}" *ngFor="let image of filteredImages.slice(1, 7)">
-            <app-tickets-grid-view *ngIf="view === 'grid'" [image]="image"></app-tickets-grid-view>
-            <app-tickets-list-view *ngIf="view === 'list'" [image]="image"></app-tickets-list-view>
+        <div class="ticket-grid" *ngIf="view === 'grid'">
+            <app-tickets-grid-view *ngFor="let image of filteredImages.slice(1, 7)" [image]="image">
+            </app-tickets-grid-view>
+        </div>
+        <div class="ticket-list" *ngIf="view === 'list'">
+            <app-tickets-list-view *ngFor="let image of filteredImages.slice(1, 7)" [image]="image">
+            </app-tickets-list-view>
         </div>
     </div>
 </div>

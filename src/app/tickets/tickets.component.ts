@@ -30,7 +30,6 @@ export class TicketsComponent implements OnInit {
 
   public loadEmitedViewChange(data: boolean) {
     this.grid = data;
-    console.log('this.grid :', this.grid);
     if (this.grid) {
       this.view = 'list';
     } else {
@@ -39,7 +38,7 @@ export class TicketsComponent implements OnInit {
   }
 
   public sortImagesFromLargest() {
-    this.filteredImages = this.filteredImages.sort(this.compareImages);
+    this.filteredImages = this.filteredImages.sort(this.sortImages).reverse();
   }
 
   public sortImagesFromSmallest() {
@@ -51,14 +50,6 @@ export class TicketsComponent implements OnInit {
     const sumB = b.width + b.height;
 
     return sumA > sumB ? 1 : sumB > sumA ? -1 : 0;
-  }
-
-  private compareImages(a, b) {
-
-    const sumA = a.width + a.height;
-    const sumB = b.width + b.height;
-
-    return sumB > sumA ? 1 : sumA > sumB ? -1 : 0;
   }
 
   private filterImages(inputValue) {
