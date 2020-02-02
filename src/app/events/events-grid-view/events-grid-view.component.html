@@ -1,0 +1,28 @@
+<div class="image-info">
+    <div class="image">
+        <img [src]="image.download_url" [alt]="image.author">
+        <div class="info">
+            <p>FEB 14</p>
+            <span class="time">Mon - 19:30</span>
+            <span class="name">{{image.author}}</span>
+        </div>
+    </div>
+    <div class="data">
+        <p>
+            <span> <i class="material-icons">crop_original</i>Width: &nbsp;</span>
+            {{image.width}}px
+        </p>
+        <p>
+            <span> <i class="material-icons">crop_original</i>Height: &nbsp;</span>
+            {{image.height}}px
+        </p>
+    </div>
+    <div class="action-btn">
+        <a [href]="image.url">
+            <button type="button" class="btn">
+                Find pics
+                <i class="material-icons">keyboard_arrow_right</i>
+            </button>
+        </a>
+    </div>
+</div>

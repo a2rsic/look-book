@@ -6,3 +6,13 @@
     display: flex;
     flex-direction: column;
 }
+
+.events-grid {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+app-events-grid-view {
+    width: 33%;
+}
