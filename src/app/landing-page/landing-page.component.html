@@ -1,5 +1,63 @@
 <div class="container">
     <mat-spinner class="loading" [diameter]="20" *ngIf="isLoading"></mat-spinner>
-    <app-tickets [filteredImages]="filteredImages" [images]="images"></app-tickets>
-    <app-events [images]="images"></app-events>
+
+    <div class="tickets-container">
+        <app-tickets-title (emitedView)="loadEmitedViewChange($event)"></app-tickets-title>
+        <div class="tickets">
+            <div class="hint" *ngIf="filteredImages.length === 0">
+                <p>No results</p>
+            </div>
+            <div class="ticket-grid" *ngIf="gridView === 'grid'">
+                <app-grid *ngFor="let image of images" [image]="image"></app-grid>
+            </div>
+            <div class="ticket-list" *ngIf="gridView === 'list'">
+                <!-- <app-list [filteredImages]="filteredImages" [images]="images"></app-list> -->
+            </div>
+        </div>
+        <div class="events">
+            <app-events-title (emitViewChangeValue)="onViewChange($event)"></app-events-title>
+
+            <div class="ticket-grid" *ngIf="listView === 'list'">
+                <app-list [image]="image" *ngFor="let image of events">
+                    <div info class="info">
+                        <div class="date">
+                            <span class="time">Mon - 19:30</span>
+                            <p>FEB</p>
+                            <p>14</p>
+                        </div>
+                    </div>
+                    <div actionBtn class="action-btn">
+                        <a [href]="image.url">
+                            <button type="button" class="btn">
+                                Find pics
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </button>
+                        </a>
+                    </div>
+                </app-list>
+            </div>
+            <div class="ticket-list" *ngIf="listView === 'grid'">
+                <app-grid [image]="image" *ngFor="let image of events">
+                    <div info class="info">
+                        <h5 class="author">{{image.author}}</h5>
+                        <div class="date">
+                            <p class="time">Mon - 19:30</p>
+                            <div class="date-info">
+                                <p>FEB</p>
+                                <p>14</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div actionBtn class="action-btn">
+                        <a [href]="image.url">
+                            <button type="button" class="btn">
+                                Find pics
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </button>
+                        </a>
+                    </div>
+                </app-grid>
+            </div>
+        </div>
+    </div>
 </div>

@@ -17,6 +17,8 @@ import { TicketsGridViewComponent } from './tickets/tickets-grid-view/tickets-gr
 import { TicketsListViewComponent } from './tickets/tickets-list-view/tickets-list-view.component';
 import { EventsListViewComponent } from './events/events-list-view/events-list-view.component';
 import { EventsGridViewComponent } from './events/events-grid-view/events-grid-view.component';
+import { GridComponent } from './shared/grid/grid.component';
+import { ListComponent } from './shared/list/list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { EventsGridViewComponent } from './events/events-grid-view/events-grid-v
     TicketsGridViewComponent,
     TicketsListViewComponent,
     EventsListViewComponent,
-    EventsGridViewComponent
+    EventsGridViewComponent,
+    GridComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

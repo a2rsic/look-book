@@ -26,6 +26,7 @@ export class TicketsComponent implements OnInit {
         this.filterImages(this.searchValue);
       }
     );
+    this.filteredImages.slice(0, 6);
   }
 
   public loadEmitedViewChange(data: boolean) {

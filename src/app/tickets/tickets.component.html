@@ -5,11 +5,11 @@
             <p>No results</p>
         </div>
         <div class="ticket-grid" *ngIf="view === 'grid'">
-            <app-tickets-grid-view *ngFor="let image of filteredImages.slice(1, 7)" [image]="image">
+            <app-tickets-grid-view *ngFor="let image of filteredImages" [image]="image">
             </app-tickets-grid-view>
         </div>
         <div class="ticket-list" *ngIf="view === 'list'">
-            <app-tickets-list-view *ngFor="let image of filteredImages.slice(1, 7)" [image]="image">
+            <app-tickets-list-view *ngFor="let image of filteredImages" [image]="image">
             </app-tickets-list-view>
         </div>
     </div>

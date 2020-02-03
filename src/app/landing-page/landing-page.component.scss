@@ -10,3 +10,70 @@
     bottom: 0;
     right: 0;
 }
+
+.ticket-grid {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.ticket-list {
+    display: flex;
+}
+
+app-grid {
+    width: 30%;
+    margin: 10px;
+}
+
+.tickets {
+    padding-bottom: 20px;
+}
+
+.events {
+    padding-bottom: 50px;
+}
+
+.action-btn {
+    margin-bottom: 10px;
+
+    a {
+        text-decoration: none;
+    }
+    button {
+        display: flex;
+        background-color: #ff4081;
+        color: white;
+    }
+}
+
+.date {
+    text-align: center;
+    margin: 0 10px;
+
+    .time {
+        color: #ff80ab;
+    }
+}
+
+app-grid .action-btn {
+    display: flex;
+    justify-content: center;
+}
+
+app-grid .date-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+app-grid .author {
+  color: rgb(82, 81, 81);
+  position: absolute;
+  bottom: 130px;
+//   left: 20px;
+  // bottom: 116px;
+  right: 29px;
+//   color: white;
+  font-weight: 500;
+}
