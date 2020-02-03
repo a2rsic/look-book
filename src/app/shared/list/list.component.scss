@@ -1,0 +1,26 @@
+.image-info { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+.image {
+    display: flex;
+}
+
+.info {
+    margin-left: 5px;
+
+    p, span {
+        display: flex;
+        align-items: center;
+    }
+}
+
+img {
+    width: 180px;
+    height: 108px;
+}
+

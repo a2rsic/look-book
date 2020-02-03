@@ -1,0 +1,27 @@
+<div class="grid">
+    <mat-card>
+        <a [href]="image.url">
+            <img mat-card-image src="{{image.download_url}}" [alt]="image.author">
+            <span class="author">{{image.author}}</span>
+        </a>
+        <mat-card-content>
+            <div class="wrapper">
+                <div>
+                    <p>
+                        <span class="image-info"><i class="material-icons">crop_original</i>Height:</span>
+                        &nbsp;
+                        {{image.height}}px
+                    </p>
+                    <p>
+                        <span class="image-info"><i class="material-icons">crop_original</i>Width:</span>
+                        &nbsp;
+                        {{image.width}}px
+                    </p>
+                </div>
+                <ng-content select="[info]"></ng-content>
+            </div>
+            <ng-content select="[actionBtn]"></ng-content>
+
+        </mat-card-content>
+    </mat-card>
+</div>

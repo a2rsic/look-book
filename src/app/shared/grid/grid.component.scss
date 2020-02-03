@@ -1,0 +1,40 @@
+mat-card {
+    position: relative;
+
+    .author {
+        position: absolute;
+        bottom: 130px;
+        right: 50px;
+        color: white;
+        font-weight: 500;
+    }
+
+    img {
+        max-width: 96%;
+        height: 120px;
+        margin: 16px auto;
+    }
+}
+
+mat-card-content {
+    p {
+        display: flex;
+        align-items: baseline;
+
+        .image-info {
+            font-weight: 500;
+        }
+    }
+
+    i {
+        position: relative;
+        top: 6px;
+        margin-right: 4px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}

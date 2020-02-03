@@ -1,0 +1,23 @@
+<div class="lists">
+    <div class="image-info">
+        <div class="image">
+            <img [src]="image.download_url" [alt]="image.author">
+            <ng-content select="[info]"></ng-content>
+            <div class="info">
+                <h5 class="author">{{image.author}}</h5>
+                <p>
+                    <span class="height"><i class="material-icons">crop_original</i>Height:</span>
+                    &nbsp;
+                    {{image.height}}px
+                </p>
+                <p>
+                    <span class="width"><i class="material-icons">crop_original</i>Width:</span>
+                    &nbsp;
+                    {{image.width}}px
+                </p>
+            </div>
+
+        </div>
+        <ng-content select="[actionBtn]"></ng-content>
+    </div>
+</div>
