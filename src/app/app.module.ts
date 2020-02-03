@@ -9,14 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from './common/common.module';
-import { TicketsComponent } from './tickets/tickets.component';
-import { EventsComponent } from './events/events.component';
 import { TicketsTitleComponent } from './tickets-title/tickets-title.component';
 import { EventsTitleComponent } from './events-title/events-title.component';
-import { TicketsGridViewComponent } from './tickets/tickets-grid-view/tickets-grid-view.component';
-import { TicketsListViewComponent } from './tickets/tickets-list-view/tickets-list-view.component';
-import { EventsListViewComponent } from './events/events-list-view/events-list-view.component';
-import { EventsGridViewComponent } from './events/events-grid-view/events-grid-view.component';
 import { GridComponent } from './shared/grid/grid.component';
 import { ListComponent } from './shared/list/list.component';
 
@@ -26,14 +20,8 @@ import { ListComponent } from './shared/list/list.component';
     HeaderComponent,
     FooterComponent,
     LandingPageComponent,
-    TicketsComponent,
-    EventsComponent,
     TicketsTitleComponent,
     EventsTitleComponent,
-    TicketsGridViewComponent,
-    TicketsListViewComponent,
-    EventsListViewComponent,
-    EventsGridViewComponent,
     GridComponent,
     ListComponent
   ],
