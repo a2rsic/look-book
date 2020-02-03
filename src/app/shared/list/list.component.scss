@@ -24,3 +24,11 @@ img {
     height: 108px;
 }
 
+
+@media screen and (max-width: 768px) {
+
+    .image-info {
+        flex-direction: column;
+    }
+
+}

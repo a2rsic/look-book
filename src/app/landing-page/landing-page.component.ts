@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from '../photos.service';
 import { IImage } from '../types/image.interface';
+import { InteractionService } from '../interaction.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -21,12 +22,21 @@ export class LandingPageComponent implements OnInit {
   public filteredImages: IImage[] = [];
   public events: IImage[] = [];
 
-  constructor(private photosService: PhotosService) { }
+  constructor(
+    private photosService: PhotosService,
+    private interactionService: InteractionService
+  ) { }
 
   ngOnInit() {
     this.loadImages();
     this.gridView = 'grid';
     this.listView = 'list';
+    this.interactionService.value$.subscribe(
+      (data) => {
+        this.searchValue = data;
+        this.filterImages(this.searchValue);
+      }
+    );
   }
 
   public loadEmitedViewChange(data: boolean) {
@@ -47,6 +57,26 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
+  public sortImagesFromLargest() {
+    this.filteredImages = this.filteredImages.sort(this.sortImages).reverse();
+  }
+
+  public sortImagesFromSmallest() {
+    this.filteredImages = this.filteredImages.sort(this.sortImages);
+  }
+
+  private sortImages(a, b) {
+    const sumA = a.width + a.height;
+    const sumB = b.width + b.height;
+
+    return sumA > sumB ? 1 : sumB > sumA ? -1 : 0;
+  }
+
+  private filterImages(inputValue) {
+    inputValue.trim().toLowerCase();
+    this.filteredImages = this.images.filter(image => image.author.trim().toLowerCase().includes(inputValue));
+  }
+
   private loadImages() {
     this.photosService.getImages().subscribe(
       (response) => {
@@ -54,7 +84,6 @@ export class LandingPageComponent implements OnInit {
         this.images = response.slice(0, 6);
         this.filteredImages = response.slice(0, 6);
         this.events = response.slice(21, 24);
-        console.log('response :', this.filteredImages);
       },
       (error) => {
         this.isLoading = false;

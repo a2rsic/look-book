@@ -8,16 +8,32 @@
                 <p>No results</p>
             </div>
             <div class="ticket-grid" *ngIf="gridView === 'grid'">
-                <app-grid *ngFor="let image of images" [image]="image"></app-grid>
+                <app-grid *ngFor="let image of filteredImages" [filteredImages]="filteredImages" [image]="image">
+                </app-grid>
             </div>
             <div class="ticket-list" *ngIf="gridView === 'list'">
-                <!-- <app-list [filteredImages]="filteredImages" [images]="images"></app-list> -->
+                <app-list *ngFor="let image of filteredImages" [filteredImages]="filteredImages" [image]="image">
+                </app-list>
             </div>
+        </div>
+        <div class="sort-btn">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle matTooltip="Sort images from largest" (click)="sortImagesFromLargest()" value="bold">
+                    Sort
+                    images
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </mat-button-toggle>
+                <mat-button-toggle (click)="sortImagesFromSmallest()" matTooltip="Sort images from smallest"
+                    value="italic">Sort
+                    images
+                    <i class="material-icons">keyboard_arrow_up</i>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
         </div>
         <div class="events">
             <app-events-title (emitViewChangeValue)="onViewChange($event)"></app-events-title>
 
-            <div class="ticket-grid" *ngIf="listView === 'list'">
+            <div class="tickets-grid" *ngIf="listView === 'list'">
                 <app-list [image]="image" *ngFor="let image of events">
                     <div info class="info">
                         <div class="date">
@@ -36,7 +52,7 @@
                     </div>
                 </app-list>
             </div>
-            <div class="ticket-list" *ngIf="listView === 'grid'">
+            <div class="tickets-list" *ngIf="listView === 'grid'">
                 <app-grid [image]="image" *ngFor="let image of events">
                     <div info class="info">
                         <h5 class="author">{{image.author}}</h5>
